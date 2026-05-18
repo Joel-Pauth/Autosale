@@ -13,7 +13,7 @@ import { ModelsService } from '../services/models.service';
 import { CreateVehicleModelDto } from '../dto/vehicle-model.dto';
 import { UpdateBrandDto } from '../../brands/dto/brand.dto';
 
-@ApiTags('Modelos')
+@ApiTags('Models')
 @Controller('models')
 export class ModelsController {
   constructor(private readonly modelsService: ModelsService) {}
