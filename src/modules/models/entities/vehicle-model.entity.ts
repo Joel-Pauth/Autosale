@@ -7,7 +7,7 @@ import {
 } from 'typeorm';
 import { Brand } from '../../brands/entities/brand.entity';
 
-@Entity()
+@Entity('vehicle_models')
 export class VehicleModel {
   @PrimaryGeneratedColumn('increment', { type: 'int4' })
   id: number;

@@ -3,9 +3,12 @@ import {
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
+  JoinColumn,
+  ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { VehicleModel } from '../../models/entities/vehicle-model.entity';
 
 @Entity('vehicles')
 export class Vehicle {
@@ -25,9 +28,9 @@ export class Vehicle {
   color: string;
 
   @Column({ type: 'int4', default: 0 })
-  milage: number;
+  mileage: number;
 
-  @Column({ type: 'float' })
+  @Column({ type: 'decimal', precision: 10, scale: 2 })
   price: number;
 
   @Column({ type: 'varchar', length: 50 })
@@ -39,6 +42,10 @@ export class Vehicle {
   @UpdateDateColumn({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   updated_at: Date;
 
-  @DeleteDateColumn({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
+  @DeleteDateColumn({ type: 'timestamp', nullable: true })
   deleted_at: Date;
+
+  @ManyToOne(() => VehicleModel, { eager: true })
+  @JoinColumn({ name: 'model_id' })
+  model: VehicleModel;
 }

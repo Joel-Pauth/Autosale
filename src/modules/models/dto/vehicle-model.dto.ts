@@ -11,7 +11,7 @@ export class CreateVehicleModelDto {
   @IsInt()
   @IsPositive()
   @IsNotEmpty()
-  @ApiProperty()
+  @ApiProperty({ example: 1 })
   brand_id: number;
 
   @IsString()
