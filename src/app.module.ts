@@ -6,6 +6,7 @@ import { BrandsModule } from './modules/brands/brands.module';
 import { ModelsModule } from './modules/models/models.module';
 import { SalesModule } from './modules/sales/sales.module';
 import { CustomersModule } from './modules/customers/customers.module';
+import { AuthModule } from './modules/auth/auth.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { CustomersModule } from './modules/customers/customers.module';
     ModelsModule,
     SalesModule,
     CustomersModule,
+    AuthModule,
   ],
   controllers: [],
   providers: [],
